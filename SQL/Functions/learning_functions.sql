@@ -1,6 +1,6 @@
 ﻿CREATE SCHEMA IF NOT EXISTS learning_processes; 
  
-CREATE MATERIALIZED VIEW IF NOT EXISTS learning_processes.summary_of_mode_overall AS 
+CREATE MATERIALIZED VIEW learning_processes.summary_of_mode_overall AS 
  SELECT foo.transportation_type,
     avg(foo.point_avg_speed) AS point_avg_speed,
     avg(foo.point_avg_acc) AS point_avg_acc,
@@ -39,7 +39,7 @@ CREATE MATERIALIZED VIEW IF NOT EXISTS learning_processes.summary_of_mode_overal
   GROUP BY foo.transportation_type
   WITH DATA;
 
-CREATE MATERIALIZED VIEW IF NOT EXISTS learning_processes.summary_of_mode_per_user AS 
+CREATE MATERIALIZED VIEW learning_processes.summary_of_mode_per_user AS 
  SELECT foo.user_id,
     foo.transportation_type,
     avg(foo.point_avg_speed) AS point_avg_speed,
